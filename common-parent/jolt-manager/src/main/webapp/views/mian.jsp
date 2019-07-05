@@ -6,18 +6,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-	<script src="js/mian.js"></script>
+	<script type="text/javascript" src="${basePath}/js/jquery-3.1.1.min.js"></script>
+	<script src="${basePath}/js/mian.js"></script>
 	<link rel="stylesheet" href="${basePath}/css/mian.css">
-	<link rel="stylesheet" href="${basePath}css/initialize.css">
+	<link rel="stylesheet" href="${basePath}/css/initialize.css">
 	<!-- record -->
-	<link rel="stylesheet" href="${basePath}css/record.css">
+	<link rel="stylesheet" href="${basePath}/css/record.css">
 	<!-- classification -->
-	<link rel="stylesheet" href="${basePath}css/classification.css">
+	<link rel="stylesheet" href="${basePath}/css/classification.css">
 	<!-- padging -->
-	<link rel="stylesheet" href="${basePath}css/padging.css">
+	<link rel="stylesheet" href="${basePath}/css/padging.css">
 	<!-- information -->
-	<link rel="stylesheet" href="${basePath}css/information.css">
+	<link rel="stylesheet" href="${basePath}/css/information.css">
 	<!-- 小图标 -->
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -44,7 +44,7 @@
 				</div>
 				<div class="rtop">
 					<ul>
-						<li><a href="${pageContext.request.contextPath}/exit">退出</a></li>
+						<li><a href="${pageContext.request.contextPath}/user/exit.do">退出</a></li>
 						<li>欢迎回来:<span><s:property value="#session.student.username"/></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 					</ul>
 				</div>

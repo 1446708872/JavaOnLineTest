@@ -28,7 +28,7 @@
 			<div class="li">
 				<div class="ele-wrap">
 					<i class="icon icon-user"></i>
-					<input type="text" name="userId" id="userId" placeholder="请输入学号" maxlength="20">
+					<input type="text" name="user_id" id="user_id" placeholder="请输入学号" maxlength="20">
 				</div>
 			</div>
 			<div class="li">
@@ -70,12 +70,27 @@
 	//提交用户信息
 	$(function () {
 		$("#sub").click(function () {
-			if(checkUser()){
-				$.post("userLogin.do",$("#login_from").serialize(),function(data){
-					alert(data)
-					codeCan();
-				})
+			if (!checkUser()) {
+				return;
 			}
+			$.post("userLogin.do", $("#login_from").serialize(), function (data) {
+                var url =window.location.host
+				switch (data) {
+					case "0":
+						exception("请输入您正确的学号！")
+						break;
+					case "1":
+						exception("您输入的密码与学号不匹配！")
+						break;
+					case "2":
+						exception('此浏览器已经有登陆账户，<a href="${basePath}/user/exit.do" >点击我退出</a>之前用户！')
+						break
+					default:
+						window.location.href= "http://" + url + "${basePath}/user/mian.do";
+						break;
+				}
+				codeCan();
+			})
 		})
 	})
 
@@ -83,11 +98,14 @@
 	function checkUser() {
 		$("#error").hide();
 
-		if(!/^[0-9]+$/.test($("#userId").val())){
-			exception("您请（全数字）正确的学号！")
+		var re = /^[0-9]+.?[0-9]*$/;
+
+
+		if(!re.test($("#user_id").val())){
+			exception("请输入（全数字）正确的学号！")
 			return false;
 		}
-		if($("#userId").val() ==""){
+		if($("#user_id").val() ==""){
 			exception("您请输入您的学号！")
 			return false;
 		}

@@ -1,5 +1,8 @@
 package com.wzy.jolt.mapper;
 
-public interface ChoiceMapper {
+import com.wzy.jolt.mapper.base.BaseMapper;
+import com.wzy.jolt.model.Choice;
+
+public interface ChoiceMapper extends BaseMapper<Choice> {
 
 }

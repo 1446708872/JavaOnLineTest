@@ -1,20 +1,20 @@
 package com.wzy.jolt.model;
 
 public class User {
-    private Integer userId;
+    private Integer user_id;
 
     private String password;
 
-    private Integer userClass;
+    private Integer user_class;
 
-    private Integer powerTitle;
+    private Integer power_title;
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getUser_id() {
+        return user_id;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setUser_id(Integer user_id) {
+        this.user_id = user_id;
     }
 
     public String getPassword() {
@@ -22,32 +22,32 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
+        this.password = password;
     }
 
-    public Integer getUserClass() {
-        return userClass;
+    public Integer getUser_class() {
+        return user_class;
     }
 
-    public void setUserClass(Integer userClass) {
-        this.userClass = userClass;
+    public void setUser_class(Integer user_class) {
+        this.user_class = user_class;
     }
 
-    public Integer getPowerTitle() {
-        return powerTitle;
+    public Integer getPower_title() {
+        return power_title;
     }
 
-    public void setPowerTitle(Integer powerTitle) {
-        this.powerTitle = powerTitle;
+    public void setPower_title(Integer power_title) {
+        this.power_title = power_title;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "userId=" + userId +
+                "user_id=" + user_id +
                 ", password='" + password + '\'' +
-                ", userClass=" + userClass +
-                ", powerTitle=" + powerTitle +
+                ", user_class=" + user_class +
+                ", power_title=" + power_title +
                 '}';
     }
 }

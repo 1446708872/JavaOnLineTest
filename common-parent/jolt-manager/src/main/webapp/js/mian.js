@@ -15,7 +15,7 @@ function side_na(obj){
 	//更改所点击的按钮状态
 	$("#"+obj.id+"").css({"background-color":"cornflowerblue","color":"white"});
 	//加载所点击功能模块
-	$.get("views/student_function/"+obj.id+".jsp",function(data){
+	$.get("../views/student_function/"+obj.id+".jsp",function(data){
 		$("#mian").html(data);
 	});
 }
