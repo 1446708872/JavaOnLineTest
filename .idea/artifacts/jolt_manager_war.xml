@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jolt-manager:war">
+    <output-path>$PROJECT_DIR$/common-parent/jolt-manager/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>jolt-manager</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="jolt-manager.war">
+      <element id="artifact" artifact-name="jolt-manager:war exploded" />
+    </root>
+  </artifact>
+</component>

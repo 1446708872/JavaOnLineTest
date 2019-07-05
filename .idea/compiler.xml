@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="jolt-manager" />
+        <module name="jolt-mapper" />
+        <module name="jolt-model" />
+        <module name="jolt-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="common-parent" target="1.5" />
+      <module name="jolt-manager" target="1.7" />
+      <module name="jolt-mapper" target="1.7" />
+      <module name="jolt-model" target="1.7" />
+      <module name="jolt-service" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

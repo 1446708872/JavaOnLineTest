@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/common-parent/common-parent.iml" filepath="$PROJECT_DIR$/common-parent/common-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-parent/jolt-manager/jolt-manager.iml" filepath="$PROJECT_DIR$/common-parent/jolt-manager/jolt-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-parent/jolt-mapper/jolt-mapper.iml" filepath="$PROJECT_DIR$/common-parent/jolt-mapper/jolt-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-parent/jolt-model/jolt-model.iml" filepath="$PROJECT_DIR$/common-parent/jolt-model/jolt-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-parent/jolt-service/jolt-service.iml" filepath="$PROJECT_DIR$/common-parent/jolt-service/jolt-service.iml" />
+    </modules>
+  </component>
+</project>
