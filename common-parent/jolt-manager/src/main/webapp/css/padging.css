@@ -1,0 +1,24 @@
+/*
+* @Author: Administrator
+* @Date:   2019-05-26 17:53:58
+* @Last Modified by:   Administrator
+* @Last Modified time: 2019-05-26 22:24:15
+*/
+.padging-lset{
+	height: 30px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}	
+.pdgg{
+	margin: 0 auto;
+	width: 800px;
+	height: 30px;
+}
+.pdgg ul li{
+	display: block;
+	float: left;
+	width: 50px;
+	line-height: 35px;
+}

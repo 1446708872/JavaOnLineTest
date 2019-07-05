@@ -1,0 +1,31 @@
+.record-head{
+	height: 50px;
+	margin-bottom: 10px;
+	/* background-color: #6495ED; */
+}
+.rside-rh{
+	width: 50%;
+	font:bold 15px/40px '微软雅黑';
+	float: left;
+}
+.lside-rh{
+	width: 50%;
+	float: left;
+	text-align: center;
+	line-height: 40px;
+}
+.input-rh{
+	margin-left:50%;
+	
+}
+/* .input-rh input:first-child{
+	border: 2px solid black;
+} */
+.table-rd{
+	height: 380px;
+	overflow-y: scroll;
+}
+/* 去掉滚动条 */
+.table-rd::-webkit-scrollbar{
+	display: none;
+}

@@ -1,0 +1,23 @@
+.inf-lside table{
+	display: block;
+	width: 50%;
+	float: left;
+}
+.inf-lside table tr td{
+	width: 200px;
+	height: 60px;
+	font-weight: bold;
+	text-align: left;
+}
+.inf-rside{
+	width: 50%;
+	float: left;
+}
+.inf-rside button{
+	width: 100px;
+	height: 30px;
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: cornflowerblue;
+	float:right
+	}

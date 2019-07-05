@@ -40,4 +40,14 @@ public class User {
     public void setPowerTitle(Integer powerTitle) {
         this.powerTitle = powerTitle;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", password='" + password + '\'' +
+                ", userClass=" + userClass +
+                ", powerTitle=" + powerTitle +
+                '}';
+    }
 }
