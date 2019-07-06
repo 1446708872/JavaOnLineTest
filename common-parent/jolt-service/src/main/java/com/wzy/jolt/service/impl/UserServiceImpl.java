@@ -1,10 +1,13 @@
 package com.wzy.jolt.service.impl;
 
+import com.wzy.jolt.model.Title;
 import com.wzy.jolt.model.User;
 import com.wzy.jolt.service.UserService;
 import com.wzy.jolt.service.base.BaseServiceImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @Transactional
@@ -16,7 +19,7 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 
     @Override
     public User findByStrId(String strId) {
-        return userMapper.findByStrId(strId);
+        return null;
     }
 
     @Override
@@ -37,5 +40,20 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     @Override
     public void insertT(User user) {
         userMapper.insertT(user);
+    }
+
+    @Override
+    public List<User> findByIntIdList(Integer id) {
+        return null;
+    }
+
+    @Override
+    public List<User> findByStrIdList(String id) {
+        return null;
+    }
+
+    @Override
+    public List<Title> findByIntIdTitleList(Integer id) {
+        return titleMapper.findByIntIdList(id);
     }
 }

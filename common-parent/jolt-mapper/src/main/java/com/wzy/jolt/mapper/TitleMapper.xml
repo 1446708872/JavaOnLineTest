@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wzy.jolt.mapper.TitleMapper">
-
+    <select id="findByIntIdList" parameterType="int" resultType="title">
+      SELECT * FROM title WHERE title_power = #{id}
+    </select>
 </mapper>

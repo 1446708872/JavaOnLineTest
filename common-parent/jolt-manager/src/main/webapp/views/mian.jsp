@@ -28,13 +28,15 @@
 	<div class="middle" id="middle">
 		<div class="lside">
 			<ul class="side-na">
-					<li ><a href="javascript:;" id="information" onclick="side_na(this)"><span>个人信息</span></a></li>
-				    <li ><a href="javascript:;" id="classification" onclick="side_na(this)"><span>试题分类</span></a></li>
-				    <li ><a href="javascript:;" id="record" onclick="side_na(this)"><span>练习记录</span></a></li>
-				    <li ><a href="javascript:;" id="rankingList" onclick="side_na(this)"><span>排&nbsp;&nbsp;行&nbsp;&nbsp;榜</span></a></li>
-				    <li ><a href="javascript:;" id="formativeTest" onclick="side_na(this)"><span>阶段检测</span></a></li>
-				    <li ><a href="javascript:;" id="onlineTesting" onclick="side_na(this)"><span>在线测试</span></a></li>
-				<s:debug></s:debug>
+				<c:forEach items="${title}" var="tl">
+					<li ><a href="javascript:;" id="${tl.title_id}" onclick="side_na(this,${tl.title_power})"><span>${tl.title}</span></a></li>
+				</c:forEach>
+					<%--<li ><a href="javascript:;" id="information" onclick="side_na(this)"><span>个人信息</span></a></li>--%>
+				    <%--<li ><a href="javascript:;" id="classification" onclick="side_na(this)"><span>试题分类</span></a></li>--%>
+				    <%--<li ><a href="javascript:;" id="record" onclick="side_na(this)"><span>练习记录</span></a></li>--%>
+				    <%--<li ><a href="javascript:;" id="rankingList" onclick="side_na(this)"><span>排&nbsp;&nbsp;行&nbsp;&nbsp;榜</span></a></li>--%>
+				    <%--<li ><a href="javascript:;" id="formativeTest" onclick="side_na(this)"><span>阶段检测</span></a></li>--%>
+				    <%--<li ><a href="javascript:;" id="onlineTesting" onclick="side_na(this)"><span>在线测试</span></a></li>--%>
 			</ul>
 		</div>
 		<div class="rside">
@@ -45,7 +47,7 @@
 				<div class="rtop">
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/user/exit.do">退出</a></li>
-						<li>欢迎回来:<span><s:property value="#session.student.username"/></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+						<li>欢迎回来:<span>${user.name}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 					</ul>
 				</div>
 			</div>

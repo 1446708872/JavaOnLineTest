@@ -1,18 +1,28 @@
 package com.wzy.jolt.model;
 
 public class Title {
-    private Integer titlePower;
+    private Integer id;
+
+    private Integer title_power;
 
     private String title;
 
-    private String titleId;
+    private String title_id;
 
-    public Integer getTitlePower() {
-        return titlePower;
+    public Integer getId() {
+        return id;
     }
 
-    public void setTitlePower(Integer titlePower) {
-        this.titlePower = titlePower;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getTitle_power() {
+        return title_power;
+    }
+
+    public void setTitle_power(Integer title_power) {
+        this.title_power = title_power;
     }
 
     public String getTitle() {
@@ -20,14 +30,24 @@ public class Title {
     }
 
     public void setTitle(String title) {
-        this.title = title == null ? null : title.trim();
+        this.title = title;
     }
 
-    public String getTitleId() {
-        return titleId;
+    public String getTitle_id() {
+        return title_id;
     }
 
-    public void setTitleId(String titleId) {
-        this.titleId = titleId == null ? null : titleId.trim();
+    public void setTitle_id(String title_id) {
+        this.title_id = title_id;
+    }
+
+    @Override
+    public String toString() {
+        return "Title{" +
+                "id=" + id +
+                ", title_power=" + title_power +
+                ", title='" + title + '\'' +
+                ", title_id='" + title_id + '\'' +
+                '}';
     }
 }

@@ -9,6 +9,26 @@ public class User {
 
     private Integer power_title;
 
+    private String name;
+
+    private String sex;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
     public Integer getUser_id() {
         return user_id;
     }
@@ -48,6 +68,8 @@ public class User {
                 ", password='" + password + '\'' +
                 ", user_class=" + user_class +
                 ", power_title=" + power_title +
+                ", name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
                 '}';
     }
 }

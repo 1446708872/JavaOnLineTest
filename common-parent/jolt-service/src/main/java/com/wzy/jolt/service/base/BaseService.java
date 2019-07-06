@@ -1,5 +1,7 @@
 package com.wzy.jolt.service.base;
 
+import java.util.List;
+
 public interface BaseService <T>{
     public T findByIntId(Integer id);
 
@@ -12,4 +14,8 @@ public interface BaseService <T>{
     public void updateT(T t);
 
     public void insertT(T t);
+
+    public List<T> findByIntIdList(Integer id);
+
+    public List<T> findByStrIdList(String id);
 }

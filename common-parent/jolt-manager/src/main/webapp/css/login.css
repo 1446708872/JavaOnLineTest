@@ -102,11 +102,11 @@ body{
     position: relative;
   }
   input{
-  	width: 336px;
-  	height: 42px;
-  	padding: 0px 10px 0px 42px;
-    box-sizing:border-box;
-  }
+        width: 336px;
+        height: 42px;
+        padding: 0px 10px 0px 42px;
+        box-sizing:border-box;
+    }
   input:focus{
     outline-color: rgb(53,195,110)
   }

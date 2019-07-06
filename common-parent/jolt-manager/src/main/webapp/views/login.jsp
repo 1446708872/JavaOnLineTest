@@ -28,13 +28,13 @@
 			<div class="li">
 				<div class="ele-wrap">
 					<i class="icon icon-user"></i>
-					<input type="text" name="user_id" id="user_id" placeholder="请输入学号" maxlength="20">
+					<input type="text" name="user_id" id="user_id" placeholder="请输入学号" value="62621878" maxlength="20">
 				</div>
 			</div>
 			<div class="li">
 				<div class="ele-wrap">
 					<i class="icon icon-psd"></i>
-					<input type="password" name="password" id="password" placeholder="请输入密码" maxlength="16">
+					<input type="password" name="password" id="password" placeholder="请输入密码" value="123456" maxlength="16">
 				</div>
 			</div>
 			<div class="li">
@@ -47,7 +47,7 @@
 					</div>
 					<div class="proving-code">
 						<i class="icon icon-code"></i>
-						<input type="text" name="code" id="code" class="control-code"placeholder="验证码">
+						<input type="text" name="code"  id="code" class="control-code"placeholder="验证码">
 					</div>
 				</div>
 			</div>

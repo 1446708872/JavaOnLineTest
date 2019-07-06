@@ -4,7 +4,7 @@
 	float: left;
 }
 .inf-lside table tr td{
-	width: 200px;
+	width: 600px;
 	height: 60px;
 	font-weight: bold;
 	text-align: left;
@@ -20,4 +20,14 @@
 	border-radius: 5px;
 	background-color: cornflowerblue;
 	float:right
-	}
+}
+
+input{
+	width: 336px;
+	height: 42px;
+	padding: 0px 10px 0px 42px;
+	box-sizing:border-box;
+}
+input:focus{
+	outline-color: rgb(53,195,110)
+}
