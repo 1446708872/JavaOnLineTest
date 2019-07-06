@@ -1,33 +1,42 @@
 package com.wzy.jolt.model;
 
 public class Class {
-    private Integer classUser;
+    private Integer class_user;
 
-    private String classAge;
+    private String class_age;
 
-    private String classMajor;
+    private String class_major;
 
-    public Integer getClassUser() {
-        return classUser;
+    @Override
+    public String toString() {
+        return "Class{" +
+                "class_user=" + class_user +
+                ", class_age='" + class_age + '\'' +
+                ", class_major='" + class_major + '\'' +
+                '}';
     }
 
-    public void setClassUser(Integer classUser) {
-        this.classUser = classUser;
+    public Integer getClass_user() {
+        return class_user;
     }
 
-    public String getClassAge() {
-        return classAge;
+    public void setClass_user(Integer class_user) {
+        this.class_user = class_user;
     }
 
-    public void setClassAge(String classAge) {
-        this.classAge = classAge == null ? null : classAge.trim();
+    public String getClass_age() {
+        return class_age;
     }
 
-    public String getClassMajor() {
-        return classMajor;
+    public void setClass_age(String class_age) {
+        this.class_age = class_age;
     }
 
-    public void setClassMajor(String classMajor) {
-        this.classMajor = classMajor == null ? null : classMajor.trim();
+    public String getClass_major() {
+        return class_major;
+    }
+
+    public void setClass_major(String class_major) {
+        this.class_major = class_major;
     }
 }

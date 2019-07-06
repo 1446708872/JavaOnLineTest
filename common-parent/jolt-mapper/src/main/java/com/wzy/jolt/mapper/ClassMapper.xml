@@ -2,4 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wzy.jolt.mapper.ClassMapper">
 
+    <insert id="insertT" parameterType="class">
+        insert into class(class_age, class_major)
+        values(#{class_age}, #{class_major})
+    </insert>
+
+    <select id="findByIntClass" parameterType="class" resultType="class">
+        SELECT * FROM class WHERE class_age =#{class_age} AND class_major=#{class_major}
+    </select>
+
+    <select id="findByList" resultType="class">
+        SELECT * FROM class
+    </select>
 </mapper>

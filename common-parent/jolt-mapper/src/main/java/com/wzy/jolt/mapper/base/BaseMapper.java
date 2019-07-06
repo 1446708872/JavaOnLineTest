@@ -18,4 +18,6 @@ public interface BaseMapper <T> {
     public List<T> findByIntIdList(Integer id);
 
     public List<T> findByStrIdList(String id);
+
+    public List<T> findByList();
 }

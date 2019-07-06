@@ -31,7 +31,7 @@
 					switch (data) {
 						case "1":
 							tips('修改密码成功!将于<span id="jumpTo">5</span>秒后跳转到登陆界面！')
-							countDown(5,'${pageContext.request.contextPath}/user/exit.do')
+							countDown(5,'${pageContext.request.contextPath}/user/login.do')
 							break;
 						case "0":
 							error("您输入原密码与现密码不符！")

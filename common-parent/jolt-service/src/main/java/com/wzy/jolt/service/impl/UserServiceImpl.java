@@ -19,7 +19,7 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 
     @Override
     public User findByStrId(String strId) {
-        return null;
+        return userMapper.findByStrId(strId);
     }
 
     @Override
@@ -44,16 +44,22 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 
     @Override
     public List<User> findByIntIdList(Integer id) {
-        return null;
+        return userMapper.findByIntIdList(id);
     }
 
     @Override
     public List<User> findByStrIdList(String id) {
-        return null;
+        return userMapper.findByStrIdList(id);
+    }
+
+    @Override
+    public List<User> findByList() {
+        return userMapper.findByList();
     }
 
     @Override
     public List<Title> findByIntIdTitleList(Integer id) {
         return titleMapper.findByIntIdList(id);
     }
+
 }

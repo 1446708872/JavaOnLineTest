@@ -7,7 +7,18 @@ function initialization (){
 	}
 }
 
-//修改密码
+
+//学生管理跳转
+function studentAdd(obj,title) {
+	//更改面包屑导航目录
+	$("#nav_top").html(title);
+	//加载所点击功能模块
+	$.get("../views/teacher_function/studentAdd/"+obj.id+".jsp",function(data){
+		$("#mian").html(data);
+	});
+}
+
+//修改密码跳转
 function changePassword(obj,power) {
 	//更改面包屑导航目录
 	$("#nav_top").html("修改密码");
@@ -19,7 +30,7 @@ function changePassword(obj,power) {
 	});
 }
 
-//侧边导航导航点击事件
+//侧边导航导航跳转
 function side_na(obj,power){
 	var sa ="student_function";
 	if(power == "0")sa="teacher_function";
@@ -39,7 +50,8 @@ function side_na(obj,power){
 //侧边导航状态初始化
 function na_color(power){
 	if(power == "0"){
-		$("#classification").css({"background-color":"transparent","color":"black"});
+		$("#information").css({"background-color":"transparent","color":"black"});
+		$("#studentAdd").css({"background-color":"transparent","color":"black"});
 	}else{
 		$("#classification").css({"background-color":"transparent","color":"black"});
 		$("#record").css({"background-color":"transparent","color":"black"});

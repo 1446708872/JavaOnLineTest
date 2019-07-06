@@ -17,4 +17,9 @@
         </set>
         WHERE user_id=#{user_id}
     </update>
+
+    <insert id="insertT" parameterType="user">
+        insert into user(user_id, password,name,sex,user_class,power_title)
+        values(#{user_id},#{password},#{name},#{sex},#{user_class},#{power_title})
+    </insert>
 </mapper>

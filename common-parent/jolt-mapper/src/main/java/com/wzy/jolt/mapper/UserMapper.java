@@ -7,4 +7,5 @@ import com.wzy.jolt.model.User;
 import java.util.List;
 
 public interface UserMapper extends BaseMapper<User> {
+
 }

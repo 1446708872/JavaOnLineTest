@@ -8,5 +8,5 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface ClassMapper extends BaseMapper<Class> {
-
+    public Class findByIntClass(Class cla);
 }

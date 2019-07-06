@@ -15,6 +15,7 @@
 			<td>权限：<span>超级管理员</span></td>
 	</table>
 </div>
-<div class="inf-rside">
-	<button type="button" onclick="changePassword(this,${user.power_title})" id="changePassword">修改密码</button>
-</div>
+
+<button type="button" class="inf-rside" onclick="changePassword(this,${user.power_title})" id="changePassword">修改密码</button>
+
+
