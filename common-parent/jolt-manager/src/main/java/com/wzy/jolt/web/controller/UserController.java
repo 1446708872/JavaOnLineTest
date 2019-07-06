@@ -76,6 +76,8 @@ public class UserController  extends BaseControllerImpl {
     public  @ResponseBody String changePassword(ChangePassword changePassword,HttpSession session){
         User user = (User) session.getAttribute("user");
         if(user.getPassword().equals(changePassword.getOriginalPassword())){
+            user.setPassword(changePassword.getNewPassword());
+            userService.updateT(user);
             return "1";
         }
         return "0";

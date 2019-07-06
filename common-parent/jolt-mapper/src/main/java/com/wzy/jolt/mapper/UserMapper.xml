@@ -6,4 +6,15 @@
         SELECT * FROM user WHERE user_id =#{id}
     </select>
 
+    <update id="updateT" parameterType="user">
+        UPDATE user
+        <set>
+            <if test="password != null">password=#{password},</if>
+            <if test="user_class != null">user_class=#{user_class},</if>
+            <if test="power_title != null">power_title=#{power_title},</if>
+            <if test="name != null">name=#{name},</if>
+            <if test="sex != null">sex=#{sex}</if>
+        </set>
+        WHERE user_id=#{user_id}
+    </update>
 </mapper>
