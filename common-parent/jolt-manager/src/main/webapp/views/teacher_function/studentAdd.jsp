@@ -4,15 +4,15 @@
     <table>
         <%--onclick="studentAdd(this,添加班级)"--%>
         <tr>
-            <td><span>班级信息添加：</span><input type="button" onclick='studentAdd(this,"添加班级")' id="addClass" value="添加班级&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></td>
+            <td><span>班级信息添加：</span><input type="button" onclick='studentAdd(this,"添加班级","studentAdd")' id="addClass" value="添加班级"></td>
         </tr>
         <tr>
-            <td><span>添加单个学生：</span><input type="button" onclick='studentAdd(this,"添加学生")' id="addStudent" value="添加学生&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></td>
+            <td><span>班级信息修改：</span><input type="button" onclick='studentAdd(this,"修改班级信息","studentAdd")' id="updateClass" value="修改班级信息"></td>
         </tr>
         <tr>
             <td>
                 <form id="itemsFrom" method="post"  enctype="multipart/form-data">
-                    <span>导入学生表格：<input type="file"style="padding-top: 7px" onchange="change()" name="excel" id="file"></span>
+                    <span>导入学生表格：<input type="file"style="padding-top: 7px" onchange="change()" name="excel" id="file"></span><br/>
                     <span style="display: none;color: red" id="error">
                             错误提示：<span id="error_val" style="color: red"></span>
                     </span>
@@ -23,7 +23,7 @@
             </td>
         </tr>
         <tr>
-            <td><span>导出学生表格：</span><input type="button" onclick='studentAdd(this,"导出学生")' id="inportStudent" value="导出学生&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></td>
+            <td><span>添加单个学生：</span><input type="button" onclick='studentAdd(this,"添加学生","studentAdd")' id="addStudent" value="添加学生"></td>
         </tr>
     </table>
 </div>
@@ -53,25 +53,16 @@
                 contentType : false,
                 processData : false,
                 success : function(data){
-                    if(data=="true"){
-                        tips("提交成功")
+                    if(data=="插入成功！"){
+                        tips(data)
+                        $("#file").val("")
+                        return;
                     }
+                    error(data)
+                    $("#file").val("")
                 }
             });
         }
     }
 
-    function error(val) {
-        $("#error_val").html(val)
-        $("#error").show()
-    }
-    function tips(val) {
-        $("#tips_val").html(val)
-        $("#tips").show()
-    }
-
-    function none() {
-        $("#error").hide()
-        $("#tips").hide()
-    }
 </script>

@@ -29,7 +29,7 @@
             </tr>
             <tr>
                 <td>
-                    <input style="margin-left: 43px" type="button" id="changePasswordFrom" value="添加学生&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+                    <input style="margin-left: 43px" type="button" id="changePasswordFrom" value="添加学生">
                     <span style="display: none;color: red" id="error">
                         错误提示：<span id="error_val" style="color: red"></span>
                     </span>
@@ -48,11 +48,11 @@
 
     $.ajax({
     type: "post",
-    url: "${pageContext.request.contextPath}/user/getClass.do",
+    url: "${pageContext.request.contextPath}/stu/getClass.do",
     success: function (data) {
         var size = '<option value ="" SELECTED>请选择</option>'
         for(var i=0; i<data.length;i++){
-            size +='<option value ="'+data[i].class_user+'" SELECTED>'+data[i].class_age+data[i].class_major+'</option>'
+            size +='<option value ="'+data[i].class_user+'">'+data[i].class_age+data[i].class_major+'</option>'
         }
         $("#user_class").html(size)
     }
@@ -112,19 +112,5 @@
         }
 
         return true;
-    }
-    function error(val) {
-        $("#error_val").html(val)
-        $("#error").show()
-    }
-
-    function tips(val) {
-        $("#tips_val").html(val)
-        $("#tips").show()
-    }
-
-    function none() {
-        $("#error").hide()
-        $("#tips").hide()
     }
 </script>

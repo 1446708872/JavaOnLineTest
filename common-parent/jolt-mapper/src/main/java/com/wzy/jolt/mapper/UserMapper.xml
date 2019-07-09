@@ -6,9 +6,14 @@
         SELECT * FROM user WHERE user_id =#{id}
     </select>
 
+    <select id="findByIntIdList" parameterType="int" resultType="user">
+        SELECT * FROM user WHERE user_class=#{id}
+    </select>
+
     <update id="updateT" parameterType="user">
         UPDATE user
         <set>
+            <if test="user_id != null">password=#{user_id},</if>
             <if test="password != null">password=#{password},</if>
             <if test="user_class != null">user_class=#{user_class},</if>
             <if test="power_title != null">power_title=#{power_title},</if>
@@ -22,4 +27,20 @@
         insert into user(user_id, password,name,sex,user_class,power_title)
         values(#{user_id},#{password},#{name},#{sex},#{user_class},#{power_title})
     </insert>
+
+    <delete id="deleteByIntId" parameterType="int" >
+        DELETE FROM user WHERE id=#{id}
+    </delete>
+
+    <delete id="deleteByStrId" parameterType="string" >
+        DELETE FROM user WHERE user_class=#{id}
+    </delete>
+
+    <select id="query" parameterType="user" resultType="user">
+        SELECT  * from user WHERE
+        <if test="user_id!=null"> user_id = #{user_id}</if>
+        <if test="user_class!=null"> user_class = #{user_class}</if>
+        <if test="name !=null"> name LIKE '%${name}%'</if>
+        <if test="sex!=null"> sex = #{sex}</if>
+    </select>
 </mapper>

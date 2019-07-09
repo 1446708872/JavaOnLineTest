@@ -1,16 +1,18 @@
 package com.wzy.jolt.model;
 
 public class Library {
-    private Integer problemId;
+    private Integer problem_id;
 
     private String introduce;
 
-    public Integer getProblemId() {
-        return problemId;
+    private Integer off;
+
+    public Integer getProblem_id() {
+        return problem_id;
     }
 
-    public void setProblemId(Integer problemId) {
-        this.problemId = problemId;
+    public void setProblem_id(Integer problem_id) {
+        this.problem_id = problem_id;
     }
 
     public String getIntroduce() {
@@ -18,6 +20,14 @@ public class Library {
     }
 
     public void setIntroduce(String introduce) {
-        this.introduce = introduce == null ? null : introduce.trim();
+        this.introduce = introduce;
+    }
+
+    public Integer getOff() {
+        return off;
+    }
+
+    public void setOff(Integer off) {
+        this.off = off;
     }
 }

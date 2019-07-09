@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -29,12 +30,12 @@ import java.util.UUID;
 @RequestMapping("user")
 public class UserController  extends BaseControllerImpl {
 
-    @RequestMapping("login")
+    @RequestMapping(value = "login")
     public String login(){
         return "login";
     }
 
-    @RequestMapping("mian")
+    @RequestMapping(value = "mian")
     public String mian(HttpSession session, Model model){
         User user = (User) session.getAttribute("user");
         List<Title> byIntIdTitleList = userService.findByIntIdTitleList(user.getPower_title());
@@ -43,14 +44,20 @@ public class UserController  extends BaseControllerImpl {
         return "mian";
     }
 
-    @RequestMapping("exit")
+    @RequestMapping(value = "byIntUser")
+    public @ResponseBody User byIntUser(int id){
+        return userService.findByIntId(id);
+    }
+
+    @RequestMapping(value = "exit")
     public String exit(HttpSession session){
         session.removeAttribute("user");
         return "forward:login.do";
     }
 
-    @RequestMapping("userLogin")
+    @RequestMapping(value = "userLogin")
     public @ResponseBody String userLogin(User user, HttpSession session){
+
         Integer JSON = 0;
 
         //判断是否已经有用户登陆
@@ -58,14 +65,11 @@ public class UserController  extends BaseControllerImpl {
             JSON =2;
             return String.valueOf(JSON);
         }
-
         //判断用户ID是否存在
         User byIntId = userService.findByIntId(Integer.valueOf(user.getUser_id()));
         if(byIntId!=null){
-
             //判断用户密码是否正确
             if(byIntId.getPassword().equals(user.getPassword())) {
-
                 //判断用户是否在其他地方登陆
                 if(SessionSave.getSessionIdSave().containsKey(user.getUser_id())&&!session.getId().equals(SessionSave.getSessionIdSave().get(user.getUser_id()))){
                     SessionSave.getSessionIdSave().remove(user.getUser_id());
@@ -82,7 +86,7 @@ public class UserController  extends BaseControllerImpl {
         return String.valueOf(JSON);
     }
 
-    @RequestMapping("changePassword")
+    @RequestMapping(value = "changePassword")
     public  @ResponseBody String changePassword(ChangePassword changePassword,HttpSession session){
         User user = (User) session.getAttribute("user");
         if(user.getPassword().equals(changePassword.getOriginalPassword())){
@@ -94,13 +98,13 @@ public class UserController  extends BaseControllerImpl {
         return "0";
     }
 
-    @RequestMapping("getClass")
-    public  @ResponseBody List<Class> getClass(ChangePassword changePassword, HttpSession session){
-        List<Class> byList = classService.findByList();
-        return byList;
+    @RequestMapping(value = "updateUser")
+    public  @ResponseBody String updateUser(User user){
+        userService.updateT(user);
+        return "true";
     }
 
-    @RequestMapping("addUser")
+    @RequestMapping(value = "addUser")
     public  @ResponseBody String addUser(User user, HttpSession session){
         System.out.println(user);
         int id = user.getUser_id();
@@ -112,7 +116,7 @@ public class UserController  extends BaseControllerImpl {
         return "true";
     }
 
-    @RequestMapping("userFile")
+    @RequestMapping(value = "userFile")
     public  @ResponseBody String userFile(HttpServletRequest request,HttpServletResponse response) throws IOException {
         MultipartHttpServletRequest servletRequest = (MultipartHttpServletRequest) request;
         MultipartFile excel = servletRequest.getFile("excel");
@@ -128,8 +132,10 @@ public class UserController  extends BaseControllerImpl {
         String fileName = UUID.randomUUID().toString()+"."+excel.getOriginalFilename().split("\\.")[1];;
         //生成文件路径
         String filePath = url+"\\"+fileName;
-        FileCopyUtils.copy(excel.getInputStream(),new FileOutputStream(new File(filePath)));
+        FileCopyUtils.copy(excel.getInputStream(),new FileOutputStream(new File(filePath)));;
+        String JSON = userService.inportExcel(filePath);
+        System.out.println("JSON+++++++++++"+JSON);
 
-        return "true";
+        return JSON;
     }
 }

@@ -65,21 +65,6 @@
 			return true;
 		}
 
-		function error(val) {
-			$("#error_val").html(val)
-			$("#error").show()
-		}
-
-		function tips(val) {
-			$("#tips_val").html(val)
-			$("#tips").show()
-		}
-
-		function none() {
-			$("#error").hide()
-			$("#tips").hide()
-		}
-
 		function countDown(secs,surl){
 			//alert(surl);
 			var jumpTo = document.getElementById('jumpTo');

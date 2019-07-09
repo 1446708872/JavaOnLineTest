@@ -2,4 +2,37 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wzy.jolt.mapper.LibraryMapper">
 
+    <select id="findByIntId" parameterType="int" resultType="library">
+        SELECT * FROM library WHERE problem_id =#{problem_id}
+    </select>
+
+    <select id="findByStrId" parameterType="string" resultType="library">
+        SELECT * FROM library WHERE introduce =#{introduce}
+    </select>
+
+    <insert id="insertT" parameterType="library">
+        insert into library(introduce,off)
+        values(#{introduce},#{off})
+    </insert>
+
+    <update id="updateT" parameterType="library">
+        UPDATE library
+        <set>
+            <if test="introduce != null">introduce=#{introduce}</if>
+        </set>
+        WHERE problem_id=#{problem_id}
+    </update>
+
+    <select id="findByList" resultType="library">
+        SELECT * FROM library
+    </select>
+
+    <select id="query" parameterType="library" resultType="library">
+        SELECT  * from class WHERE
+        <if test="introduce != null">introduce=#{introduce}</if>
+    </select>
+
+    <delete id="deleteByIntId" parameterType="int" >
+        DELETE FROM library WHERE problem_id=#{problem_id}
+    </delete>
 </mapper>

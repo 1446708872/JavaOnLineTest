@@ -16,7 +16,7 @@
                 <td>专业名称：<span><input type="text" id="class_major" name="class_major" maxlength="16"></span></td>
             </tr>
             <tr>
-                <td><input style="margin-left: 80px" type="button" id="changePasswordFrom" value="添加班级&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></td>
+                <td><input style="margin-left: 80px" type="button" id="changePasswordFrom" value="添加班级"></td>
             </tr>
         </table>
     </form>
@@ -53,19 +53,5 @@
             return false;
         }
         return true;
-    }
-    function error(val) {
-        $("#error_val").html(val)
-        $("#error").show()
-    }
-
-    function tips(val) {
-        $("#tips_val").html(val)
-        $("#tips").show()
-    }
-
-    function none() {
-        $("#error").hide()
-        $("#tips").hide()
     }
 </script>

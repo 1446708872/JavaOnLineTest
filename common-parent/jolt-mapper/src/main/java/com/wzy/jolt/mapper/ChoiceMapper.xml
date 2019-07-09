@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wzy.jolt.mapper.ChoiceMapper">
+    <insert id="insertT" parameterType="choice">
+        insert into choice(problem_id, introduce,a,b,c,d,answer)
+        values(#{problem_id}, #{introduce}, #{a},#{b},#{c},#{d},#{answer})
+    </insert>
 
+    <select id="findByList" resultType="choice">
+        SELECT * FROM choice
+    </select>
+
+    <select id="findByStrId" parameterType="string" resultType="choice">
+        SELECT * FROM choice WHERE problem_id =#{problem_id}
+    </select>
 </mapper>

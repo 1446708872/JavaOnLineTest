@@ -9,11 +9,11 @@ function initialization (){
 
 
 //学生管理跳转
-function studentAdd(obj,title) {
+function studentAdd(obj,title,url) {
 	//更改面包屑导航目录
 	$("#nav_top").html(title);
 	//加载所点击功能模块
-	$.get("../views/teacher_function/studentAdd/"+obj.id+".jsp",function(data){
+	$.get("../views/teacher_function/"+url+"/"+obj.id+".jsp",function(data){
 		$("#mian").html(data);
 	});
 }
@@ -47,11 +47,27 @@ function side_na(obj,power){
 	});
 }
 
+//查询方法
+function querySize(o,url) {
+	if($("#query").val()=="")return;
+	$.ajax({
+		url : url+'/stu/query.do',
+		type : "post",
+		data:{"o":o,"val":$("#query").val()},
+		success: function (data) {
+			queryop(data)
+		}
+	})
+}
+
 //侧边导航状态初始化
 function na_color(power){
 	if(power == "0"){
+		$("#questionsAdd").css({"background-color":"transparent","color":"black"});
+		$("#questionsInformation").css({"background-color":"transparent","color":"black"});
 		$("#information").css({"background-color":"transparent","color":"black"});
 		$("#studentAdd").css({"background-color":"transparent","color":"black"});
+		$("#studentInformation").css({"background-color":"transparent","color":"black"});
 	}else{
 		$("#classification").css({"background-color":"transparent","color":"black"});
 		$("#record").css({"background-color":"transparent","color":"black"});
@@ -60,4 +76,19 @@ function na_color(power){
 		$("#onlineTesting").css({"background-color":"transparent","color":"black"});
 		$("#information").css({"background-color":"transparent","color":"black"});
 	}
+}
+
+function error(val) {
+	$("#error_val").html(val)
+	$("#error").show()
+}
+
+function tips(val) {
+	$("#tips_val").html(val)
+	$("#tips").show()
+}
+
+function none() {
+	$("#error").hide()
+	$("#tips").hide()
 }

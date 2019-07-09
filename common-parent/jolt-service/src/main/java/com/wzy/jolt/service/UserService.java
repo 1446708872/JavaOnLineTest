@@ -9,4 +9,6 @@ import java.util.List;
 
 public interface UserService  extends BaseService<User> {
     public List<Title> findByIntIdTitleList(Integer id);
+
+    public String inportExcel(String excelPath);
 }

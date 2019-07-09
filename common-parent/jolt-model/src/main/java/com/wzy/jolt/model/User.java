@@ -1,6 +1,8 @@
 package com.wzy.jolt.model;
 
 public class User {
+    private Integer id;
+
     private Integer user_id;
 
     private String password;
@@ -12,6 +14,14 @@ public class User {
     private String name;
 
     private String sex;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -70,6 +80,7 @@ public class User {
                 ", power_title=" + power_title +
                 ", name='" + name + '\'' +
                 ", sex='" + sex + '\'' +
+                ", id='" + id + '\'' +
                 '}';
     }
 }

@@ -14,4 +14,28 @@
     <select id="findByList" resultType="class">
         SELECT * FROM class
     </select>
+
+    <select id="findByIntId" parameterType="int" resultType="class">
+        SELECT * FROM class WHERE class_user=#{id}
+    </select>
+
+    <update id="updateT" parameterType="class">
+        UPDATE class
+        <set>
+            <if test="class_age != null">class_age=#{class_age},</if>
+            <if test="class_major != null">class_major=#{class_major},</if>
+        </set>
+        WHERE class_user=#{class_user}
+    </update>
+
+    <delete id="deleteByIntId" parameterType="int" >
+        DELETE FROM class WHERE class_user=#{id}
+    </delete>
+
+    <select id="query" parameterType="class" resultType="class">
+        SELECT  * from class WHERE
+        <if test="class_user!=null">class_user = #{class_user}</if>
+        <if test="class_age !=null">class_age = #{class_age}</if>
+        <if test="class_major!=null">class_major LIKE '%${class_major}%'</if>
+    </select>
 </mapper>

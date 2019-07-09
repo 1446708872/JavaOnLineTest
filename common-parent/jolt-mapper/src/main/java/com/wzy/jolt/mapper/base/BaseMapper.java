@@ -15,6 +15,8 @@ public interface BaseMapper <T> {
 
     public void insertT(T t);
 
+    public List<T> query(T t);
+
     public List<T> findByIntIdList(Integer id);
 
     public List<T> findByStrIdList(String id);

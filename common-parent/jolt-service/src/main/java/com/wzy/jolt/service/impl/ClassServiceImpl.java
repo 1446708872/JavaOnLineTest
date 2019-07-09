@@ -1,6 +1,7 @@
 package com.wzy.jolt.service.impl;
 
 import com.wzy.jolt.model.Class;
+import com.wzy.jolt.model.User;
 import com.wzy.jolt.service.ClassService;
 import com.wzy.jolt.service.base.BaseServiceImpl;
 import org.springframework.stereotype.Service;
@@ -42,6 +43,11 @@ public class ClassServiceImpl extends BaseServiceImpl<Class> implements ClassSer
     }
 
     @Override
+    public List<Class> query(Class aClass) {
+        return classMapper.query(aClass);
+    }
+
+    @Override
     public List<Class> findByIntIdList(Integer id) {
         return classMapper.findByIntIdList(id);
     }
@@ -60,4 +66,6 @@ public class ClassServiceImpl extends BaseServiceImpl<Class> implements ClassSer
     public Class findByIntClass(Class cla) {
         return classMapper.findByIntClass(cla);
     }
+
+
 }

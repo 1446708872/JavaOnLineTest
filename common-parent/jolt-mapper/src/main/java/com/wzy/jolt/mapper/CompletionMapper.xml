@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wzy.jolt.mapper.CompletionMapper">
+    <insert id="insertT" parameterType="completion">
+        insert into completion(problem_id, introduce,answer)
+        values(#{problem_id}, #{introduce}, #{answer})
+    </insert>
 
+    <select id="findByList" resultType="completion">
+        SELECT * FROM completion
+    </select>
+
+    <select id="findByStrId" parameterType="string" resultType="completion">
+        SELECT * FROM completion WHERE problem_id =#{problem_id}
+    </select>
 </mapper>

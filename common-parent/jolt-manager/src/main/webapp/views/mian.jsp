@@ -14,8 +14,6 @@
 	<link rel="stylesheet" href="${basePath}/css/record.css">
 	<!-- classification -->
 	<link rel="stylesheet" href="${basePath}/css/classification.css">
-	<!-- padging -->
-	<link rel="stylesheet" href="${basePath}/css/padging.css">
 	<!-- information -->
 	<link rel="stylesheet" href="${basePath}/css/information.css">
 	<!-- 小图标 -->
@@ -39,6 +37,7 @@
 				    <%--<li ><a href="javascript:;" id="onlineTesting" onclick="side_na(this)"><span>在线测试</span></a></li>--%>
 			</ul>
 		</div>
+		<input type="hidden" id="hidden">
 		<div class="rside">
 			<div class="rside-top">
 				<div class="ltop">
@@ -52,7 +51,7 @@
 				</div>
 			</div>
 			<div class="rside-lset">
-				<div class="rside-bottom" id="mian"></div>
+				<div class="rside-bottom" id="mian" style="overflow:scroll"></div>
 				</div>
 			</div>
 		</div>
