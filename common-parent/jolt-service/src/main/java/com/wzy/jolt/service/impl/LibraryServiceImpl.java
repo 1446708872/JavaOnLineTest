@@ -62,4 +62,14 @@ public class LibraryServiceImpl extends BaseServiceImpl<Library> implements Libr
     public List<Library> findByList() {
         return libraryMapper.findByList();
     }
+
+    @Override
+    public void oppenTest(int problem_id) {
+        libraryMapper.oppenTest(problem_id);
+    }
+
+    @Override
+    public void closeTest(int problem_id) {
+        libraryMapper.closeTest(problem_id);
+    }
 }

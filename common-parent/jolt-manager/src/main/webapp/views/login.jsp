@@ -28,7 +28,7 @@
 			<div class="li">
 				<div class="ele-wrap">
 					<i class="icon icon-user"></i>
-					<input type="text" name="user_id" id="user_id" placeholder="请输入学号" value="62621878" maxlength="20">
+					<input type="text" name="user_id" id="user_id" placeholder="请输入学号" value="1730402061" maxlength="20">
 				</div>
 			</div>
 			<div class="li">

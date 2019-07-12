@@ -13,7 +13,7 @@ import java.util.List;
 public class CompletionServiceImpl extends BaseServiceImpl<Completion> implements CompletionService {
     @Override
     public Completion findByIntId(Integer id) {
-        return null;
+        return completionMapper.findByIntId(id);
     }
 
     @Override
@@ -23,17 +23,17 @@ public class CompletionServiceImpl extends BaseServiceImpl<Completion> implement
 
     @Override
     public void deleteByIntId(Integer id) {
-
+        completionMapper.deleteByIntId(id);
     }
 
     @Override
     public void deleteByStrId(String strId) {
-
+        completionMapper.deleteByStrId(strId);
     }
 
     @Override
     public void updateT(Completion completion) {
-
+        completionMapper.updateT(completion);
     }
 
     @Override
@@ -43,21 +43,31 @@ public class CompletionServiceImpl extends BaseServiceImpl<Completion> implement
 
     @Override
     public List<Completion> query(Completion completion) {
-        return null;
+        return completionMapper.query(completion);
     }
 
     @Override
     public List<Completion> findByIntIdList(Integer id) {
-        return null;
+        return completionMapper.findByIntIdList(id);
     }
 
     @Override
     public List<Completion> findByStrIdList(String id) {
-        return null;
+        return completionMapper.findByStrIdList(id);
     }
 
     @Override
     public List<Completion> findByList() {
         return completionMapper.findByList();
+    }
+
+    @Override
+    public int MixSize(int id) {
+        return completionMapper.MixSize(id);
+    }
+
+    @Override
+    public List Rand(int problem_id) {
+        return completionMapper.Rand(problem_id);
     }
 }

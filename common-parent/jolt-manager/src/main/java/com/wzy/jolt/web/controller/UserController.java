@@ -39,6 +39,9 @@ public class UserController  extends BaseControllerImpl {
     public String mian(HttpSession session, Model model){
         User user = (User) session.getAttribute("user");
         List<Title> byIntIdTitleList = userService.findByIntIdTitleList(user.getPower_title());
+        Class byIntId = classService.findByIntId(user.getUser_class());
+        String orl = byIntId.getClass_age()+"  "+byIntId.getClass_major();
+        model.addAttribute("orl",orl);
         model.addAttribute("user",user);
         model.addAttribute("title",byIntIdTitleList);
         return "mian";

@@ -53,7 +53,7 @@
                 list+=' <tr>\n' +
                     '                <td style="text-align:center ">'+data[i].class_user+'</td>\n' +
                     '                <td style="text-align:center ">'+data[i].class_age+'</td>\n' +
-                    '                <td style="text-align:center "><button style="width: 200px" type="button">'+data[i].class_major+'</button></td>\n' +
+                    '                <td style="text-align:center ">'+data[i].class_major+'</td>\n' +
                     '                <td style="text-align:center "><button type="button" id="'+data[i].class_user+'" onclick="StidentList(this)">查看班级信息</button></td>\n' +
                     '                <td style="text-align:center "><button type="button"   ondblclick="Delete('+data[i].class_user+')">删除班级信息</button></td>\n' +
                     '            </tr>'

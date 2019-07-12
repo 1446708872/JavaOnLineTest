@@ -10,6 +10,9 @@
                 <td>友好提示：<span id="tips_val" style="color: blue"></span></td>
             </tr>
             <tr>
+                <td>试题题目：<span><textarea style="height: 100px;width: 848px" id="subject" name="subject"></textarea></span></td>
+            </tr>
+            <tr>
                 <td>试题内容：<span><textarea style="height: 200px;width: 848px" id="introduce" name="introduce"></textarea></span></td>
             </tr>
             <tr>
@@ -33,7 +36,7 @@
 <script>
     $.ajax({
         type: "post",
-        url: "${pageContext.request.contextPath}/lib/addLibraryList.do",
+        url: "${pageContext.request.contextPath}/lib/LibraryList.do",
         success: function (data) {
             var size = '<option value ="" SELECTED>请选择</option>'
             for(var i=0; i<data.length;i++){
@@ -55,6 +58,7 @@
                         tips("添加成功！")
                         $("#introduce").val("")
                         $("#answer").val("")
+                        $("#subject").val("")
                     }else {
                         error("添加失败您输入的分类已存在！")
                     }
@@ -76,6 +80,11 @@
 
         if($("#problem_id").val()==""){
             error("请选择分类！")
+            return false;
+        }
+
+        if($("#subject").val()==""){
+            error("请选择题目！")
             return false;
         }
         return true;

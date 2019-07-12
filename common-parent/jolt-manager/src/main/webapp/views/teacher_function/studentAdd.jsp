@@ -5,6 +5,7 @@
         <%--onclick="studentAdd(this,添加班级)"--%>
         <tr>
             <td><span>班级信息添加：</span><input type="button" onclick='studentAdd(this,"添加班级","studentAdd")' id="addClass" value="添加班级"></td>
+            <td><span>添加单个学生：</span><input type="button" onclick='studentAdd(this,"添加学生","studentAdd")' id="addStudent" value="添加学生"></td>
         </tr>
         <tr>
             <td><span>班级信息修改：</span><input type="button" onclick='studentAdd(this,"修改班级信息","studentAdd")' id="updateClass" value="修改班级信息"></td>
@@ -21,9 +22,6 @@
                     </span>
                 </form>
             </td>
-        </tr>
-        <tr>
-            <td><span>添加单个学生：</span><input type="button" onclick='studentAdd(this,"添加学生","studentAdd")' id="addStudent" value="添加学生"></td>
         </tr>
     </table>
 </div>

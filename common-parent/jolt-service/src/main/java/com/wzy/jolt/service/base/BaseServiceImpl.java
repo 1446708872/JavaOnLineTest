@@ -22,4 +22,7 @@ public abstract class BaseServiceImpl<T> implements BaseService<T> {
 
     @Autowired
     protected CompletionMapper completionMapper;
+
+    @Autowired
+    protected ExaminationRecordsMapper examinationRecordsMapper;
 }

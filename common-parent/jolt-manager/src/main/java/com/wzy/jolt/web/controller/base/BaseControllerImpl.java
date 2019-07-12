@@ -1,5 +1,6 @@
 package com.wzy.jolt.web.controller.base;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wzy.jolt.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -21,4 +22,6 @@ public class BaseControllerImpl {
     @Autowired
     public CompletionService completionService;
 
+    @Autowired
+    public ExaminationRecordsService examinationRecordsService;
 }

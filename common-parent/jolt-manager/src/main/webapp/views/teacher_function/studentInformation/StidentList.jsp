@@ -43,7 +43,7 @@
         for(var i=0;i<data.length;i++){
             list+= '            <tr>\n' +
                 '            <td style="text-align:center ">'+data[i].user_id+'</td>\n' +
-                '            <td style="text-align:center"><button type="button" style="width: 110px">'+data[i].name+'</button></td>\n' +
+                '            <td style="text-align:center">'+data[i].name+'</td>\n' +
                 '            <td style="text-align:center ">'+data[i].sex+'</td>\n' +
                 '            <td style="text-align:center "><button type="button" id="'+data[i].user_id+'"  onclick="Student(this)"> 修改学生信息</button></td>\n' +
                 '            <td style="text-align:center "><button type="button" ondblclick="Delete('+data[i].id+')" >删除学生信息</button></td>\n' +
@@ -60,6 +60,7 @@
              $("#mian").html(data);
          });
      }
+
 
     function op() {
         $.ajax({

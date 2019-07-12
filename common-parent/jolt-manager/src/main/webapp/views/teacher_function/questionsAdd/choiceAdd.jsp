@@ -10,7 +10,7 @@
                 <td>友好提示：<span id="tips_val" style="color: blue"></span></td>
             </tr>
             <tr>
-                <td colspan="2">内容&nbsp;&nbsp;&nbsp;：<span><textarea style="height: 100px;width: 900px" id="introduce" name="introduce"></textarea></span></td>
+                <td colspan="2">内容&nbsp;&nbsp;&nbsp;：<span><textarea style="height: 100px;width: 917px" id="introduce" name="introduce"></textarea></span></td>
             </tr>
             <tr>
                 <td>选择A：<span><textarea style="margin: 0px; width: 364px; height: 59px;" id="a" name="a"></textarea></span></td>
@@ -23,14 +23,14 @@
             <tr>
                 <td>
                     答案&nbsp;&nbsp;&nbsp;：
-                    <select name="sex" style="height: 30px;width: 135px" id="answer">
-                        <option value ="" SELECTED>请选择</option>
-                        <option value ="a">a</option>
-                        <option value ="b">b</option>
-                        <option value ="c">c</option>
-                        <option value ="d">d</option>
-                    </select>
-                    分类&nbsp;&nbsp;&nbsp;=：
+                        <select name="answer" style="height: 30px;width: 135px" id="answer">
+                            <option value ="" SELECTED>请选择</option>
+                            <option value ="a">a</option>
+                            <option value ="b">b</option>
+                            <option value ="c">c</option>
+                            <option value ="d">d</option>
+                        </select>
+                    分类&nbsp;&nbsp;&nbsp;：
                     <select name="problem_id" style="height: 30px;width: 135px" id="problem_id">
                     </select>
                 </td>
@@ -69,7 +69,7 @@
 
     $.ajax({
         type: "post",
-        url: "${pageContext.request.contextPath}/lib/addLibraryList.do",
+        url: "${pageContext.request.contextPath}/lib/LibraryList.do",
         success: function (data) {
             var size = '<option value ="" SELECTED>请选择</option>'
             for(var i=0; i<data.length;i++){

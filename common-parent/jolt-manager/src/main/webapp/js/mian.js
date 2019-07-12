@@ -63,6 +63,7 @@ function querySize(o,url) {
 //侧边导航状态初始化
 function na_color(power){
 	if(power == "0"){
+		$("#achievement").css({"background-color":"transparent","color":"black"});
 		$("#questionsAdd").css({"background-color":"transparent","color":"black"});
 		$("#questionsInformation").css({"background-color":"transparent","color":"black"});
 		$("#information").css({"background-color":"transparent","color":"black"});

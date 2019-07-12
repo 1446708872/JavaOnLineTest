@@ -1,34 +1,54 @@
 package com.wzy.jolt.model;
 
 public class ExaminationRecords {
-    private Integer examinationId;
+    private Integer examination_id;
 
-    private Integer userId;
+    private Integer user_id;
 
     private String choice;
 
-    private String choiceDone;
+    private String choice_done;
 
     private String completion;
 
-    private String completionDone;
+    private String completion_done;
 
     private Integer score;
 
-    public Integer getExaminationId() {
-        return examinationId;
+    private Integer problem_id;
+
+    private String timer;
+
+    public Integer getProblem_id() {
+        return problem_id;
     }
 
-    public void setExaminationId(Integer examinationId) {
-        this.examinationId = examinationId;
+    public void setProblem_id(Integer problem_id) {
+        this.problem_id = problem_id;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public String getTimer() {
+        return timer;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setTimer(String timer) {
+        this.timer = timer;
+    }
+
+    public Integer getExamination_id() {
+        return examination_id;
+    }
+
+    public void setExamination_id(Integer examination_id) {
+        this.examination_id = examination_id;
+    }
+
+    public Integer getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(Integer user_id) {
+        this.user_id = user_id;
     }
 
     public String getChoice() {
@@ -36,15 +56,15 @@ public class ExaminationRecords {
     }
 
     public void setChoice(String choice) {
-        this.choice = choice == null ? null : choice.trim();
+        this.choice = choice;
     }
 
-    public String getChoiceDone() {
-        return choiceDone;
+    public String getChoice_done() {
+        return choice_done;
     }
 
-    public void setChoiceDone(String choiceDone) {
-        this.choiceDone = choiceDone == null ? null : choiceDone.trim();
+    public void setChoice_done(String choice_done) {
+        this.choice_done = choice_done;
     }
 
     public String getCompletion() {
@@ -52,15 +72,15 @@ public class ExaminationRecords {
     }
 
     public void setCompletion(String completion) {
-        this.completion = completion == null ? null : completion.trim();
+        this.completion = completion;
     }
 
-    public String getCompletionDone() {
-        return completionDone;
+    public String getCompletion_done() {
+        return completion_done;
     }
 
-    public void setCompletionDone(String completionDone) {
-        this.completionDone = completionDone == null ? null : completionDone.trim();
+    public void setCompletion_done(String completion_done) {
+        this.completion_done = completion_done;
     }
 
     public Integer getScore() {

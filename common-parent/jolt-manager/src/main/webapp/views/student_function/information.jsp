@@ -3,18 +3,19 @@
 <div class="inf-lside">
 	<table>
 		<tr>
-			<td>姓名：<span></span></td>
+			<td>账户：<span>${user.user_id}</span></td>
 		</tr>
 		<tr>
-			<td>性别：<span></span></td>
+			<td>姓名：<span>${user.name}</span></td>
 		</tr>
 		<tr>
-			<td>学号：<span></span></td>
+			<td>性别：<span>${user.sex}</span></td>
 		</tr>
 		<tr>
-			<td>班级：<span></span></td>
+			<td>权限：<span>学生</span></td>
+		</tr>
 	</table>
 </div>
-<div class="inf-rside">
-	<button type="button">修改密码</button>
-</div>
+
+<button type="button" class="inf-rside" onclick="changePassword(this,${user.power_title})" id="changePassword">修改密码</button>
+

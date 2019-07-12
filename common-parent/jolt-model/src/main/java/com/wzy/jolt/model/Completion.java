@@ -1,5 +1,7 @@
 package com.wzy.jolt.model;
 
+import javax.xml.crypto.Data;
+
 public class Completion {
     private Integer completion_id;
 
@@ -7,9 +9,14 @@ public class Completion {
 
     private String introduce;
 
+    private String subject;
+
     private String answer;
 
     private Integer score;
+
+    private Data timer;
+
 
     @Override
     public String toString() {
@@ -17,10 +24,20 @@ public class Completion {
                 "completion_id=" + completion_id +
                 ", problem_id=" + problem_id +
                 ", introduce='" + introduce + '\'' +
+                ", subject='" + subject + '\'' +
                 ", answer='" + answer + '\'' +
                 ", score=" + score +
                 '}';
     }
+
+    public Data getTimer() {
+        return timer;
+    }
+
+    public void setTimer(Data timer) {
+        this.timer = timer;
+    }
+
 
     public Integer getCompletion_id() {
         return completion_id;
@@ -44,6 +61,14 @@ public class Completion {
 
     public void setIntroduce(String introduce) {
         this.introduce = introduce;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
     public String getAnswer() {

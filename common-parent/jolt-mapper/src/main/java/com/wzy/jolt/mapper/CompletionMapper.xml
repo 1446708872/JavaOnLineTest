@@ -2,15 +2,50 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wzy.jolt.mapper.CompletionMapper">
     <insert id="insertT" parameterType="completion">
-        insert into completion(problem_id, introduce,answer)
-        values(#{problem_id}, #{introduce}, #{answer})
+        insert into completion(problem_id, introduce,answer,subject)
+        values(#{problem_id}, #{introduce}, #{answer}, #{subject})
     </insert>
 
     <select id="findByList" resultType="completion">
         SELECT * FROM completion
     </select>
 
-    <select id="findByStrId" parameterType="string" resultType="completion">
+    <select id="findByStrIdList" parameterType="string" resultType="completion">
         SELECT * FROM completion WHERE problem_id =#{problem_id}
+    </select>
+
+    <select id="query" parameterType="completion" resultType="completion">
+        SELECT  * from completion WHERE
+        <if test="completion_id != null">completion_id=#{completion_id}</if>
+        <if test="introduce != null">introduce LIKE '%${introduce}%'</if>
+        <if test="subject != null">introduce LIKE '%${subject}%'</if>
+    </select>
+
+    <select id="findByIntId" parameterType="int" resultType="completion">
+        SELECT  * from completion WHERE completion_id=#{id}
+    </select>
+
+    <select id="findByStrId" parameterType="string" resultType="completion">
+        SELECT  * from completion WHERE introduce=#{id}
+    </select>
+
+    <update id="updateT" parameterType="completion">
+        UPDATE completion SET
+        introduce=#{introduce},
+        subject=#{subject},
+        answer=#{answer}
+        WHERE completion_id=#{completion_id}
+    </update>
+
+    <delete id="deleteByIntId" parameterType="int">
+        DELETE FROM completion WHERE completion_id=#{id}
+    </delete>
+
+    <select id="MixSize" parameterType="int" resultType="int">
+      SELECT count(*) FROM completion WHERE problem_id =#{id} ;
+    </select>
+
+    <select id="Rand" parameterType="int" resultType="completion">
+        select * from completion  WHERE problem_id=#{problem_id} order by rand() limit 5
     </select>
 </mapper>

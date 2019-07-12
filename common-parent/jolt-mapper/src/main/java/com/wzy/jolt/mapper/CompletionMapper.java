@@ -7,5 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface CompletionMapper extends BaseMapper<Completion> {
+    public int MixSize(int id);
 
+    public List Rand(int problem_id);
 }

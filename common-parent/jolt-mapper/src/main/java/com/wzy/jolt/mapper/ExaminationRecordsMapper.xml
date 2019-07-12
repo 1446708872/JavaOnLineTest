@@ -2,4 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wzy.jolt.mapper.ExaminationRecordsMapper">
 
+    <insert id="insertT" parameterType="examinationRecords">
+        insert into examination_records(user_id,choice_done,completion_done,problem_id)
+        values(#{user_id},  #{choice_done},#{completion_done},#{problem_id})
+    </insert>
+
+    <select id="findByIntId" parameterType="int" resultType="examinationRecords">
+        SELECT  * from examination_records WHERE problem_id=#{id}
+    </select>
+
+    <select id="findByUserIdAndProblemId" parameterType="java.util.Map" resultType="examinationRecords">
+         SELECT  * from examination_records WHERE problem_id=#{problem_id} AND user_id =#{user_id}
+    </select>
 </mapper>

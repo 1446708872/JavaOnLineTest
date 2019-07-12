@@ -1,9 +1,7 @@
 package com.wzy.jolt.web.controller;
 
-import com.wzy.jolt.model.ChangePassword;
+import com.wzy.jolt.model.*;
 import com.wzy.jolt.model.Class;
-import com.wzy.jolt.model.Ltmit;
-import com.wzy.jolt.model.User;
 import com.wzy.jolt.web.controller.base.BaseControllerImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -86,6 +84,8 @@ public class StudentAddController extends BaseControllerImpl {
                     list  = classService.query(cla);
                     if(list!=null)return list;
                     cla.setClass_user(null);
+
+                    return list;
                 }
 
                 cla.setClass_major(val);
@@ -110,6 +110,8 @@ public class StudentAddController extends BaseControllerImpl {
                     list = userService.query(user);
                     if(list!=null)return list;
                     user.setUser_class(null);
+
+                    return list;
                 }
 
                 user.setName(val);
@@ -121,6 +123,54 @@ public class StudentAddController extends BaseControllerImpl {
                 list = userService.query(user);
                 if(list!=null)return list;
                 user.setSex(null);
+                break;
+
+            case "library":
+                Library library = new Library();
+                if((Pattern.compile("[0-9]*")).matcher(val).matches()){
+                    library.setProblem_id(Integer.valueOf(val));
+                    list = libraryService.query(library);
+                    if(list!=null)return list;
+                    library.setProblem_id(null);
+
+                    return list;
+                }
+                library.setIntroduce(val);
+                list = libraryService.query(library);
+                if(list!=null)return list;
+                library.setIntroduce(null);
+                break;
+
+            case "completion":
+                Completion completion = new Completion();
+                if((Pattern.compile("[0-9]*")).matcher(val).matches()){
+                    completion.setCompletion_id(Integer.valueOf(val));
+                    list = completionService.query(completion);
+                    if(list!=null)return list;
+                    completion.setCompletion_id(null);
+                    return list;
+                }
+
+                completion.setSubject(val);
+                list =completionService.query(completion);
+                if(list!=null)return list;
+                completion.setSubject(null);
+                break;
+
+            case "choice":
+                Choice choice = new Choice();
+                if((Pattern.compile("[0-9]*")).matcher(val).matches()){
+                    choice.setChoice_id(Integer.valueOf(val));
+                    list = choiceService.query(choice);
+                    if(list!=null)return list;
+                    choice.setChoice_id(null);
+                    return list;
+                }
+
+                choice.setIntroduce(val);
+                list =choiceService.query(choice);
+                if(list!=null)return list;
+                choice.setIntroduce(null);
                 break;
         }
         return list;

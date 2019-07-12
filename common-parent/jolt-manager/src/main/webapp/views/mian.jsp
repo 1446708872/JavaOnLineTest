@@ -38,6 +38,7 @@
 			</ul>
 		</div>
 		<input type="hidden" id="hidden">
+		<input type="hidden" id="hidden1">
 		<div class="rside">
 			<div class="rside-top">
 				<div class="ltop">
@@ -46,7 +47,7 @@
 				<div class="rtop">
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/user/exit.do">退出</a></li>
-						<li>欢迎回来:<span>${user.name}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+						<li>欢迎回来:<span>${orl}&nbsp;&nbsp;${user.name}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 					</ul>
 				</div>
 			</div>

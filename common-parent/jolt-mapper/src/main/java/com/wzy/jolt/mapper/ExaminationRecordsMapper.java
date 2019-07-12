@@ -5,7 +5,8 @@ import com.wzy.jolt.model.ExaminationRecords;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ExaminationRecordsMapper extends BaseMapper<ExaminationRecords> {
-
+    public ExaminationRecords findByUserIdAndProblemId(Map<String,Object> map);
 }

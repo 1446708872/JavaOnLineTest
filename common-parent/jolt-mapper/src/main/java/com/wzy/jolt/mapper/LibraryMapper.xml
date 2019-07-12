@@ -28,11 +28,20 @@
     </select>
 
     <select id="query" parameterType="library" resultType="library">
-        SELECT  * from class WHERE
-        <if test="introduce != null">introduce=#{introduce}</if>
+        SELECT  * from library WHERE
+        <if test="problem_id != null">problem_id=#{problem_id}</if>
+        <if test="introduce != null">introduce LIKE '%${introduce}%'</if>
     </select>
 
     <delete id="deleteByIntId" parameterType="int" >
         DELETE FROM library WHERE problem_id=#{problem_id}
     </delete>
+
+    <update id="oppenTest" parameterType="int">
+         UPDATE library SET off=1 WHERE problem_id=#{problem_id}
+    </update>
+
+    <update id="closeTest" parameterType="int">
+         UPDATE library SET off=0 WHERE problem_id=#{problem_id}
+    </update>
 </mapper>

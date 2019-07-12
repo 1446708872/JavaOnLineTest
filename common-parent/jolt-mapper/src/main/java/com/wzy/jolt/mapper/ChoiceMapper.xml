@@ -10,7 +10,50 @@
         SELECT * FROM choice
     </select>
 
-    <select id="findByStrId" parameterType="string" resultType="choice">
+    <select id="findByStrIdList" parameterType="string" resultType="choice">
         SELECT * FROM choice WHERE problem_id =#{problem_id}
+    </select>
+
+    <select id="findByIdListTimer" parameterType="java.util.Map" resultType="choice">
+       SELECT c.* , r.timer FROM choice c  LEFT  JOIN records r
+        ON  c.problem_id= #{problem_id} AND r.c_id = c.choice_id AND  c.problem_id =r.librart_id AND r.user_id = #{user_id}
+    </select>
+
+
+    <select id="query" parameterType="choice" resultType="choice">
+        SELECT  * from choice WHERE
+        <if test="choice_id != null">choice_id=#{choice_id}</if>
+        <if test="introduce != null">introduce LIKE '%${introduce}%'</if>
+    </select>
+
+    <select id="findByIntId" parameterType="int" resultType="choice">
+        SELECT  * from choice WHERE choice_id=#{id}
+    </select>
+
+    <select id="findByStrId" parameterType="string" resultType="choice">
+        SELECT  * from choice WHERE introduce=#{id}
+    </select>
+
+    <update id="updateT" parameterType="choice">
+        UPDATE choice  SET
+        introduce=#{introduce},
+        answer=#{answer},
+        a=#{a},
+        b=#{b},
+        c=#{c},
+        d=#{d}
+        WHERE choice_id=#{choice_id}
+    </update>
+
+    <delete id="deleteByIntId" parameterType="int">
+      DELETE FROM choice WHERE choice_id=#{id}
+    </delete>
+
+    <select id="MixSize" parameterType="int" resultType="int">
+      SELECT count(*) FROM choice WHERE problem_id =#{id} ;
+    </select>
+
+    <select id="Rand" parameterType="int" resultType="choice">
+        select * from choice  WHERE problem_id=#{problem_id} order by rand() limit 10
     </select>
 </mapper>

@@ -16,7 +16,7 @@
                 <td colspan="2">分类名称：<span><input type="text" id="introduce" name="introduce" maxlength="16"></span></td>
             </tr>
             <tr>
-                <td><input style="margin-left: 80px" type="button" id="changePasswordFrom" value="添加填空提"></td>
+                <td><input style="margin-left: 80px" type="button" id="changePasswordFrom" value="修改分类"></td>
             </tr>
         </table>
     </form>

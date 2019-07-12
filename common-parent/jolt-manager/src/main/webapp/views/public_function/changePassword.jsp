@@ -78,6 +78,7 @@
 			}
 		}
 	</script>
+	<button style="margin-top: 18px;margin-left:-111px" type="button" class="inf-rside" onclick="side_na(this,0)" id="information">返回</button>
 </div>
 
 

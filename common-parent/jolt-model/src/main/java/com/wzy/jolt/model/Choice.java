@@ -1,5 +1,7 @@
 package com.wzy.jolt.model;
 
+import javax.xml.crypto.Data;
+
 public class Choice {
     private Integer choice_id;
 
@@ -16,6 +18,16 @@ public class Choice {
     private String d;
 
     private String answer;
+
+    private String timer;
+
+    public String getTimer() {
+        return timer;
+    }
+
+    public void setTimer(String timer) {
+        this.timer = timer;
+    }
 
     public Integer getChoice_id() {
         return choice_id;
